@@ -14,5 +14,15 @@ class Patient
     @@all << self
   end
 
+  def new_appointment(date, doctor)
+    Appointment.new(date, doctor, self)
+  end
 
+  def appointments
+    Appointment.all.filter{|appointment| appointment.patient == self}
+  end
+
+  def doctors
+    appointments.collect{|appointment| appointment.doctor}
+  end
 end
