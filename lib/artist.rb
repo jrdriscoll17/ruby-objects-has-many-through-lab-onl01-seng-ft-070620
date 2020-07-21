@@ -28,6 +28,6 @@ class Artist
   end
 
   def genres
-    songs.filter{|song| song.genre}
+    songs.collect{|song| song.genre}
   end
 end
