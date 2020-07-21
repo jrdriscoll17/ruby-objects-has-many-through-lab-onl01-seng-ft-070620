@@ -24,7 +24,7 @@ class Artist
   end
 
   def songs
-    Songs.all.filter{|song| song.artist == self}
+    Song.all.filter{|song| song.artist == self}
   end
 
   def genres
